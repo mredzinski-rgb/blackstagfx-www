@@ -609,31 +609,8 @@ body:has(#v-start.on) .demo { display:none; }
 </section>
 
 <!-- ============ RAPORT ZA REJESTRACJĘ ============ -->
-<section class="view" id="v-raport">
-  <div class="login">
-    <div style="display:grid;gap:22px;justify-items:center;width:100%">
-      <a href="#start"><img src="full.png" alt="Black Stag FX Business Intelligence" style="width:min(300px,80vw);height:auto;display:block"></a>
-      <form class="login-card" id="r-form" style="width:min(480px,100%)" onsubmit="event.preventDefault(); const v=id=>document.getElementById(id).value; const b=[['Firma do sprawdzenia','r-q'],['Imię i nazwisko','r-name'],['Moja firma','r-firm'],['E-mail','r-mail'],['Telefon','r-tel']].map(x=>x[0]+': '+v(x[1])).join('\n'); document.getElementById('r-mailto').href='mailto:pomoc@blackstagfx.com?subject='+encodeURIComponent('Zamówienie raportu o firmie')+'&amp;body='+encodeURIComponent(b); this.style.display='none'; document.getElementById('r-ok').hidden=false; scrollTo(0,0)">
-        <div class="eyebrow">Raport o firmie</div>
-        <p style="margin:0;color:var(--muted)">Zamów raport o wybranej firmie: dane rejestrowe, finanse na tle branży i powiązania. Cena: 190 zł netto, płatne z góry przy zamówieniu. Po zaksięgowaniu płatności przygotujemy raport i wyślemy go na Twój e-mail razem z fakturą VAT.</p>
-        <label for="r-q">Firma do sprawdzenia (NIP, KRS albo nazwa)<input class="field" id="r-q" required placeholder="np. NIP (10 cyfr)"></label>
-        <label for="r-name">Imię i nazwisko<input class="field" id="r-name" required></label>
-        <label for="r-firm">Twoja firma<input class="field" id="r-firm" required></label>
-        <label for="r-mail">E-mail służbowy<input class="field" id="r-mail" type="email" required></label>
-        <label for="r-tel">Telefon (opcjonalnie)<input class="field" id="r-tel" type="tel"></label>
-        <label for="r-zgoda" style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" id="r-zgoda" required style="margin-top:4px"> Akceptuję regulamin i politykę prywatności. Raport ma charakter informacyjny.</label>
-        <button class="btn primary" type="submit" style="justify-content:center">Dalej · 190 zł netto</button>
-        <small style="color:var(--muted)">Masz już konto? <a href="https://app.blackstagfx.com/login">Zaloguj się</a></small>
-      </form>
-      <div class="login-card" id="r-ok" hidden style="width:min(480px,100%)">
-        <div class="eyebrow">Ostatni krok</div>
-        <h2 style="margin:0;font:800 24px var(--display)">Wyślij zamówienie e-mailem</h2>
-        <p style="margin:0;color:var(--muted)">Przygotowaliśmy wiadomość z Twoim zamówieniem. Kliknij przycisk poniżej i wyślij ją ze swojej poczty. Odpowiemy z fakturą i linkiem do płatności, a raport przygotujemy po zaksięgowaniu wpłaty. Przycisk nie działa? Napisz na <a href="mailto:pomoc@blackstagfx.com">pomoc@blackstagfx.com</a> i podaj NIP sprawdzanej firmy.</p>
-        <a class="btn primary" id="r-mailto" href="mailto:pomoc@blackstagfx.com" style="justify-content:center">Otwórz gotową wiadomość</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="view" id="v-raport"><div class="login"><div style="display:grid;gap:22px;justify-items:center;width:100%"><a href="#start"><img src="full.png" alt="Black Stag FX" style="width:min(300px,80vw);height:auto"></a><form class="login-card" style="width:min(560px,100%)" onsubmit="event.preventDefault();location.href='https://app.blackstagfx.com/login?produkt=report&amp;nip='+encodeURIComponent(document.getElementById('r-q').value)+'#rejestracja'">
+<div class="eyebrow">Raport Biznesowy</div><h2>Sprawdź firmę od strony liczb</h2><p>190 zł netto / 233,70 zł brutto · płatność jednorazowa</p><label for="r-q">NIP firmy do raportu<input class="field" id="r-q" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 cyfr"></label><p>W kolejnym kroku podasz dane swojej firmy i wybierzesz płatność online Stripe lub przelew na podstawie faktury. Dostępne metody zobaczysz przed złożeniem zamówienia.</p><p>Dokumenty i podsumowanie otrzymasz e-mailem. Raport udostępnimy po potwierdzeniu płatności i dostępności danych. Jeśli przygotowanie raportu nie będzie możliwe, zwrócimy opłatę.</p><button class="btn primary" type="submit">Dalej — dane firmy i płatność</button><small>Masz konto? <a href="https://app.blackstagfx.com/login">Zaloguj się</a></small></form></div></div></section>
 
 <!-- ============ REJESTRACJA: 3 KROKI ============ -->
 <section class="view" id="v-rej">
